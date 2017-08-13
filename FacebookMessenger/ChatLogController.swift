@@ -23,7 +23,6 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     var messages: [Message]?
     let messageInputContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         return view
     }()
     
@@ -33,9 +32,9 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(ChatLogCell.self, forCellWithReuseIdentifier: cellId)
         tabBarController?.tabBar.isHidden = true
-        view.addSubview(messageInputContainerView)
-        view.addConstraintsWithFormat(format: "H:|[v0]|", views: messageInputContainerView)
-        view.addConstraintsWithFormat(format: "V: [v0]|", views: messageInputContainerView)
+        collectionView?.addSubview(messageInputContainerView)
+        collectionView?.addConstraintsWithFormat(format: "H:|[v0]|", views: messageInputContainerView)
+        collectionView?.addConstraintsWithFormat(format: "V:|[v0]|", views: messageInputContainerView)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
