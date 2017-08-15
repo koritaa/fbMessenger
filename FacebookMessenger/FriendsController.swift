@@ -28,6 +28,7 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if let count = messages?.count {
             return count
         }
@@ -54,7 +55,6 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
         let controller = ChatLogController(collectionViewLayout: layout)
         controller.friend = messages?[indexPath.item].friend
         navigationController?.pushViewController(controller, animated: true)
-   
     }
 
 }
