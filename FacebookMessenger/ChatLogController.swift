@@ -87,8 +87,6 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             blockOperations.append(BlockOperation(block: {
                 self.collectionView?.insertItems(at: [newIndexPath!])
             }))
-            
-//            collectionView?.scrollToItem(at: newIndexPath!, at: .bottom, animated: true)
         }
     }
     
